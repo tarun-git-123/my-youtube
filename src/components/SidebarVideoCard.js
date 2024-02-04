@@ -1,9 +1,9 @@
 import React from "react";
 import { Link } from "react-router-dom";
-
+import DateAgo from "./DateAgo";
 const SidebarVideoCard = ({ info }) => {
   const { snippet, statistics, id } = info;
-  const { channelTitle, title, thumbnails } = snippet;
+  const { channelTitle, title, thumbnails, publishedAt } = snippet;
   return (
     <div className="flex my-2">
       <div className="w-7/12">
@@ -23,7 +23,7 @@ const SidebarVideoCard = ({ info }) => {
               {channelTitle}
             </h1>
             <h1 className="font-medium text-sm text-gray-600 my-2">
-              {statistics.viewCount} views{" "}
+              {statistics.viewCount} views{" "} - <DateAgo date={publishedAt}/>
             </h1>
           </div>
         </Link>

@@ -1,5 +1,6 @@
 import React from "react";
 import { Button } from "./Button";
+import { Link } from "react-router-dom";
 const lists = ["All", "Gaming", "News", "Music", "History","Cricket","Football","Education"];
 const ButtonList = () => {
   return (

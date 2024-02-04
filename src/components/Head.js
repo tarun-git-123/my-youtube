@@ -3,11 +3,13 @@ import { useDispatch, useSelector } from "react-redux";
 import { toggleMenu } from "../utils/appSlice";
 import { YOUTUBE_SEARCH_API } from "../utils/constant";
 import { cacheResults } from "../utils/searchSlice";
+import { Link, useNavigate } from "react-router-dom";
 const Head = () => {
   const [searchQuery, setSearchQuery] = useState("");
   const [searchsSuggestions, setSearchsSuggestions] = useState(null);
   const [showSuggestions, setShowSuggestions] = useState(false);
   const dispatch = useDispatch();
+  const navigate = useNavigate();
 
   const cacheDatas = useSelector((store) => store.search.cacheData);
   // console.log(cacheDatas)
@@ -19,6 +21,7 @@ const Head = () => {
     // console.log(event);
     setSearchQuery(event.target.innerHTML);
     setShowSuggestions(false);
+    navigate('/results?search_query='+searchQuery)
   };
 
   useEffect(() => {
@@ -40,7 +43,7 @@ const Head = () => {
   }, [searchQuery]);
 
   const getSearchSuggestions = async () => {
-    console.log("API - " + searchQuery);
+    // console.log("API - " + searchQuery);
     setShowSuggestions(true);
     if (searchQuery === "") {
       setShowSuggestions(false);
@@ -64,11 +67,12 @@ const Head = () => {
           src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRtzhOWn8RgPu2lpStBngDltJYkzmNWXjCsix68kD2ObNk8S-FmYNXmcGEq_v7DcWRNrMo&usqp=CAU"
           alt="hamburgernemu"
         />
+        <Link to="/">
         <img
           className="h-5 w-28 ml-3 cursor-pointer"
           src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b8/YouTube_Logo_2017.svg/1024px-YouTube_Logo_2017.svg.png"
           alt="youtube logo"
-        />
+        /></Link>
       </div>
       <div className="col-span-10 ml-48">
         <div className="flex">
@@ -78,8 +82,6 @@ const Head = () => {
             placeholder="Search"
             value={searchQuery}
             onChange={(e) => setSearchQuery(e.target.value)}
-            onFocus={() => setShowSuggestions(true)}
-            onBlur={() => setShowSuggestions(false)}
           />
           <button className="h-9 w-24 border border-gray-400 bg-gray-200 rounded-e-full ">
             Search

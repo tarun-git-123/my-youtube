@@ -5,6 +5,8 @@ import { useSearchParams } from "react-router-dom";
 import { YOUTUBE_PROFILE_IMAGE, YOUTUBE_WATCH_VIDEOS_API } from "../utils/constant";
 import CommentContainer from "./CommentContainer";
 import SidebarVideo from "./SidebarVideo";
+import Sidebar from "./Sidebar";
+import LiveChat from "./LiveChat";
 
 const WatchPage = () => {
   const [videoInfo, setVideoInfo] = useState(null);
@@ -41,7 +43,8 @@ const WatchPage = () => {
   return (
     <>
       <div className="flex my-2">
-        <div className={!isMenuOpen ? "w-[60%] ml-[5%]" : "w-[60%] ml-[5%]"}>
+        {isMenuOpen && <Sidebar/>}
+        <div className={!isMenuOpen ? "w-[60%] ml-[5%]" : "w-[60%]"}>
           <div className="rounded-xl">
             <iframe
               width="100%"
@@ -92,6 +95,7 @@ const WatchPage = () => {
           </div>
         </div>
         <div className="w-[30%] mx-5">
+          <LiveChat/>
           <SidebarVideo/>
         </div>
       </div>

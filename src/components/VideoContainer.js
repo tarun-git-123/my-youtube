@@ -1,6 +1,5 @@
 import useVideoContainer from "../utils/useVideoContainer";
 import VideoCard from "./VideoCard";
-
 const VideoContainer = () => {
   const videos = useVideoContainer();
   if (videos === null) return <h1>Loading</h1>;
