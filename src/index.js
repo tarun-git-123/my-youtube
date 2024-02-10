@@ -8,6 +8,7 @@ import { RouterProvider, createBrowserRouter} from "react-router-dom";
 import WatchPage from "./components/WatchPage";
 import SearchResults from "./components/SearchResults";
 import Body from "./components/Body" 
+import Shimmer from './components/Shimmer';
 
 const router = createBrowserRouter([
   {
@@ -25,6 +26,10 @@ const router = createBrowserRouter([
       {
         path:'/results',
         element:<SearchResults/>
+      },
+      {
+        path:'/shimmer',
+        element:<Shimmer/>
       }
     ]
   }

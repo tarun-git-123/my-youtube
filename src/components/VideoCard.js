@@ -11,7 +11,7 @@ const VideoCard = ({ info }) => {
   // console.log(profile);
   const isMenuOpen = useSelector((store) => store.app.isMenuOpen);
 
-  if(profile===null){ return <h1>Loading</h1>}
+  if(profile===null) return
 
   // early return pattern
   const videoClass = !isMenuOpen
