@@ -7,11 +7,12 @@ const Body = () => {
     // useEffect(()=>{
     //     dispatch(toggleMenu())
     // });
+
     const isMenuOpen = useSelector( store => store.app.isMenuOpen);
     // console.log(isMenuOpen);
     return (
         <div className='flex'>
-            {isMenuOpen && <Sidebar/>}
+            <Sidebar/>
             <MainContainer/>
         </div>
     );

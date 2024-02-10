@@ -1,6 +1,7 @@
 import React from "react";
 import "../App.css";
 import { useSelector } from "react-redux";
+import Sidebar from "./Sidebar";
 
 function Shimmer() {
   const isMenuOpen = useSelector((store) => store.app.isMenuOpen);

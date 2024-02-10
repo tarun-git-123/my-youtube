@@ -4,6 +4,7 @@ import { toggleMenu } from "../utils/appSlice";
 import { YOUTUBE_SEARCH_API } from "../utils/constant";
 import { cacheResults } from "../utils/searchSlice";
 import { Link, useNavigate } from "react-router-dom";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 const Head = () => {
   const [searchQuery, setSearchQuery] = useState("");
   const [searchsSuggestions, setSearchsSuggestions] = useState(null);
@@ -34,7 +35,6 @@ const Head = () => {
       } else {
         getSearchSuggestions();
       }
-      // getSearchSuggestions();
     }, 200);
 
     return () => {
@@ -58,6 +58,9 @@ const Head = () => {
 
   // console.log(searchsSuggestions);
 
+  // const isMenuOpen = useSelector((store)=>store.app.isMenuOpen);
+  // console.log(isMenuOpen);
+
   return (
     <div className="grid grid-flow-col p-3 m-1 shadow-md">
       <div className="flex col-span-1 p-2">
@@ -77,15 +80,18 @@ const Head = () => {
       <div className="col-span-10 ml-48">
         <div className="flex">
           <input
-            className="h-9 w-1/2 border border-gray-400 px-6 rounded-s-full"
+            className="h-10 w-1/2 border border-gray-400 px-6 rounded-s-full"
             type="text"
             placeholder="Search"
             value={searchQuery}
             onChange={(e) => setSearchQuery(e.target.value)}
           />
-          <button className="h-9 w-24 border border-gray-400 bg-gray-200 rounded-e-full ">
+          <button className="h-10 w-24 border-gray-300 bg-gray-200 rounded-e-full ">
             Search
           </button>
+          <div className="w-10 h-10 rounded-full bg-gray-300 mx-4 relative">
+            <FontAwesomeIcon icon="fa-solid fa-microphone" className="h-4 w-4 text-black absolute left-[12px] top-[13px]"/>
+          </div>
         </div>
         {showSuggestions && (
           <div className="absolute py-2 bg-white text-black w-[32%] shadow-sm shadow-gray-700 rounded-2xl mt-1">
@@ -105,10 +111,12 @@ const Head = () => {
         )}
       </div>
 
-      <div className="col-span-1">
+      <div className="col-span-1 flex">
+      <FontAwesomeIcon icon="fa-regular fa-square-plus" className="h-6 mt-[4px] text-gray-600"/>
+        <FontAwesomeIcon icon="fa-regular fa-bell" className="h-6 mt-[4px] mx-7 text-gray-600"/>
         <img
-          className="w-10"
-          src="https://www.iconpacks.net/icons/2/free-user-icon-3296-thumb.png"
+          className="w-8 h-8 rounded-full"
+          src="https://yt3.ggpht.com/ylt_oyttut3dH4DzjORG7B5G7Qc8fpAf3aDZAdtSfv_SAh_3NGcRd30YVQZd9nWHg3vOrQbFLA=s88-c-k-c0x00ffffff-no-rj"
           alt="user icon"
         />
       </div>
