@@ -62,20 +62,23 @@ const Head = () => {
   // console.log(isMenuOpen);
 
   return (
-    <div className="grid grid-flow-col p-3 m-1 shadow-md">
-      <div className="flex col-span-1 p-2">
+    <div className="w-full fixed bg-white z-50">
+    <div className="grid grid-flow-col py-2 ml-3">
+      <div className="flex col-span-1 p-2 z-50">
         <img
           onClick={() => toggleManuHandler()}
-          className="h-5 cursor-pointer"
+          className="h-7 cursor-pointer"
           src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRtzhOWn8RgPu2lpStBngDltJYkzmNWXjCsix68kD2ObNk8S-FmYNXmcGEq_v7DcWRNrMo&usqp=CAU"
           alt="hamburgernemu"
         />
         <Link to="/">
         <img
-          className="h-5 w-28 ml-3 cursor-pointer"
-          src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b8/YouTube_Logo_2017.svg/1024px-YouTube_Logo_2017.svg.png"
+          className="h-7 w-10 ml-2 cursor-pointer"
+          src="https://1000logos.net/wp-content/uploads/2017/05/Red-YouTube-logo.png"
           alt="youtube logo"
-        /></Link>
+        />
+        </Link>
+        <Link to="/"><span className="text-black font-bold text-lg font-[Roboto, fantasy, sans-serif]">MyTube</span></Link>
       </div>
       <div className="col-span-10 ml-48">
         <div className="flex">
@@ -86,10 +89,10 @@ const Head = () => {
             value={searchQuery}
             onChange={(e) => setSearchQuery(e.target.value)}
           />
-          <button className="h-10 w-24 border-gray-300 bg-gray-200 rounded-e-full ">
-            Search
+          <button className="h-10 w-14 border-gray-200 bg-gray-200 rounded-e-full ">
+            <FontAwesomeIcon icon="fa-solid fa-magnifying-glass"/>
           </button>
-          <div className="w-10 h-10 rounded-full bg-gray-300 mx-4 relative">
+          <div className="w-10 h-10 rounded-full bg-gray-200 mx-4 relative">
             <FontAwesomeIcon icon="fa-solid fa-microphone" className="h-4 w-4 text-black absolute left-[12px] top-[13px]"/>
           </div>
         </div>
@@ -111,15 +114,16 @@ const Head = () => {
         )}
       </div>
 
-      <div className="col-span-1 flex">
-      <FontAwesomeIcon icon="fa-regular fa-square-plus" className="h-6 mt-[4px] text-gray-600"/>
-        <FontAwesomeIcon icon="fa-regular fa-bell" className="h-6 mt-[4px] mx-7 text-gray-600"/>
+      <div className="col-span-1 flex mt-2">
+      <FontAwesomeIcon icon="fa-regular fa-square-plus" className="h-5 mt-[4px] text-gray-600"/>
+        <FontAwesomeIcon icon="fa-regular fa-bell" className="h-5 mt-[4px] mx-7 text-gray-600"/>
         <img
-          className="w-8 h-8 rounded-full"
+          className="w-7 h-7 rounded-full"
           src="https://yt3.ggpht.com/ylt_oyttut3dH4DzjORG7B5G7Qc8fpAf3aDZAdtSfv_SAh_3NGcRd30YVQZd9nWHg3vOrQbFLA=s88-c-k-c0x00ffffff-no-rj"
           alt="user icon"
         />
       </div>
+    </div>
     </div>
   );
 };

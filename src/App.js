@@ -1,6 +1,5 @@
 import { Outlet } from "react-router-dom";
 import "./App.css";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { library } from "@fortawesome/fontawesome-svg-core";
 // import Body from "./components/Body";
 import Head from "./components/Head";
@@ -27,7 +26,8 @@ import {
   faGamepad,
   faTrophy,
   faPodcast,
-  faMicrophone
+  faMicrophone,
+  faMagnifyingGlass
 } from "@fortawesome/free-solid-svg-icons";
 import {
   faUser,
@@ -63,7 +63,8 @@ library.add(
   faLightbulb,
   faBell,
   faMicrophone,
-  faSquarePlus
+  faSquarePlus,
+  faMagnifyingGlass
 );
 // import { RouterProvider, createBrowserRouter} from "react-router-dom";
 // import MainContainer from "./components/MainContainer";

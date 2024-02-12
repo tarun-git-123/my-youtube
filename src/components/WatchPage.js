@@ -42,9 +42,9 @@ const WatchPage = () => {
 
   return (
     <>
-      <div className="flex my-2">
-        {isMenuOpen && <Sidebar/>}
-        <div className={!isMenuOpen ? "w-[60%] ml-[5%]" : "w-[60%]"}>
+      <div className="flex my-2 absolute top-[8%] left-[0%]">
+        {/* <Sidebar/> */}
+        <div className={"w-[64%] ml-[6%]"}>
           <div className="rounded-xl">
             <iframe
               width="100%"
@@ -94,7 +94,7 @@ const WatchPage = () => {
             <CommentContainer />
           </div>
         </div>
-        <div className="w-[30%] mx-5">
+        <div className="w-[25%] mx-5">
           <LiveChat/>
           <SidebarVideo/>
         </div>

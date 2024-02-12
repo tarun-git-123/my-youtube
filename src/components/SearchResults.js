@@ -20,7 +20,7 @@ const SearchResults = () => {
   if(searchInfo===null) return <h1>Loading...</h1>
   console.log(searchInfo)
 
-  return (<div className="w-7/12 m-auto">
+  return (<div className="w-7/12 m-auto absolute top-[12%] left-[25%]">
       {searchInfo.map((video, index) => (
         <ResultVideoCard info={video} key={video.etag} />
       ))}

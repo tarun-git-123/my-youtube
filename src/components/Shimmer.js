@@ -12,7 +12,7 @@ function Shimmer() {
     : "w-[23.5%] mx-2 mb-10";
   return (
     <>
-      <div className="flex flex-wrap">
+      <div className="flex flex-wrap absolute my-12">
         {
           // Or something else
           [...Array(n)].map((e, i) => (

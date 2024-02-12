@@ -10,7 +10,7 @@ const Sidebar = () => {
   return (
     <div
       className={
-        !isMenuOpen ? "w-[5%]" : "w-[15%] h-[90vh] font-normal text-base hover:overflow-y-scroll"
+        !isMenuOpen ? "w-[5%] fixed top-[8%]" : "w-[15%] h-[90vh] font-normal text-base overflow-y-scroll fixed top-[8%]"
       }
     >
       <div>
@@ -229,6 +229,13 @@ const Sidebar = () => {
             </div>
           </li>
         </ul>
+      </div>
+      <div className={!isMenuOpen ? "hidden" : "visible border border-t-0 mt-4"}></div>
+      <div className={!isMenuOpen ? "hidden" : "visible"}>
+        <p className="mx-4 text-black my-3">
+          Disclamer! This is just for Learning purpose, I have used the Google Youtube API to fetch the data.
+        </p>
+        <h1 className="text-sm font-normal ml-4 my-4">© 2024 Youtube LLC</h1>
       </div>
     </div>
   );
